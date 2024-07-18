@@ -296,16 +296,20 @@ class Wartungsplan:
         self.calendar = calendar
         self.backend = backend
 
+        now = datetime.datetime.now().astimezone()
+        midnight = datetime.time(0, 0, 0)
+
         # parse start-date
         if not start_date:
-            self.start_date = datetime.datetime.today()
+            self.start_date = datetime.datetime.combine(now, midnight)
         else:
-            self.start_date = dateutil.parser.parse(start_date)
-        logger.info("Start Date: %s", self.start_date.astimezone())
+            self.start_date = dateutil.parser.parse(start_date).astimezone()
+        logger.info("Start Date: %s", self.start_date)
 
         # parse end-date
         if not end_date:
-            self.end_date = self.start_date + datetime.timedelta(7)
+            end = self.start_date + datetime.timedelta(days=7)
+            self.end_date = datetime.datetime.combine(end, midnight)
         else:
             self.end_date = dateutil.parser.parse(end_date)
         logger.info("End Date: %s", self.end_date.astimezone())
