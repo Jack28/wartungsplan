@@ -2,6 +2,7 @@
 
 ## Under development
 
+ - Update dependencies
 
 ## Version 1.0rc3
 
