@@ -238,6 +238,7 @@ $ Wartungsplan -h
 usage: Wartungsplan [-h] [--config CONFIG] [--ics-calendar ICS_CALENDAR]
                     [--verbose] [--dry-run] [--logfile LOGFILE]
                     [--start-date START_DATE] [--end-date END_DATE]
+                    [--timedelta TIMEDELTA]
                     {version,list,send,otrs}
 
 positional arguments:
@@ -261,6 +262,9 @@ options:
   --end-date END_DATE, -e END_DATE
                         End Date e.g. 2023-05-03. Default is start-date + 1
                         day. (00:00:00 respectively)
+  --timedelta, -t TIMEDELTA
+                        timedelta is a string of days:hours:minutes:seconds which is
+                        added to the start-date. Default is 7 days (1 week) -> 7:0:0:0
 ```
 
 ## Contact ##

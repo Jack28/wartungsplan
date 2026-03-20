@@ -1,6 +1,8 @@
 [calendar]
 #Path to ics file. Calendar only needs to be readable.
 calendarfile = /media/shareX/Wartungspläne.ics
+#Start-date + timedelta (days:hours:minutes:seconds)
+timedelta = 1:0:0:0
 
 [mail]
 server = smtp.example.com

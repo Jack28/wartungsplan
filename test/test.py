@@ -103,6 +103,19 @@ class TestWartungsplan(unittest.TestCase):
             wp = Wartungsplan.Wartungsplan("2023-06-01", "2023-07-01", cal, self.b)
             self.assertEqual(wp.run_backend(), 30)
 
+    def test_timedelta(self):
+        """ timedelta is a config option """
+        p = os.path.join(self.tests_data_dir, "EveryDayWithHeavyHTML.ics")
+        with open(p, encoding='utf-8') as c:
+            cal = icalendar.Calendar.from_ical(c.read())
+            wp = Wartungsplan.Wartungsplan("2023-05-05", None, cal, self.b, [3,0,0,0])
+            self.assertEqual(wp.run_backend(), 3)
+            wp = Wartungsplan.Wartungsplan("2023-06-01", None, cal, self.b)
+            self.assertEqual(wp.run_backend(), 7)
+            wp = Wartungsplan.Wartungsplan("2023-06-01", None, cal, self.b, [5,0,0,0])
+            self.assertEqual(wp.run_backend(), 5)
+
+
     def test_bangkok_timezone(self):
         """ With this test we avoid regression of an error we made handling
         timezones. While in Bangkok it's the next day we (UTC+2) have a
