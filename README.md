@@ -5,9 +5,6 @@ action per event like sending an email or opening a ticket.
 
 ![wartungsplan](https://github.com/science-computing/wartungsplan/assets/2771054/ee0f788d-7c62-4321-9a78-1dc076aa36fd)
 
-## Requirements
-
- - Python 3.8
 
 ## Installation instructions ##
 
