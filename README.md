@@ -1,3 +1,13 @@
+# :smile: This project has been moved to Codeberg ⚠️
+
+https://codeberg.org/wartungsplan/Wartungsplan
+
+
+
+
+
+
+
 # Wartungsplan #
 
 A tool to extract events from an ical file by day or day range and perform an
