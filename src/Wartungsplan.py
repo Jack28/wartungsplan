@@ -274,7 +274,9 @@ class OtrsApi(Backend):
             else:
                 client = pyotrs.Client(self.config['otrs']['server'],
                                        self.config['otrs']['username'],
-                                       self.config['otrs']['password'])
+                                       self.config['otrs']['password'],
+                                       https_verify=self.config['otrs'].get('https_verify', True),
+                                       ca_cert_bundle=self.config['otrs'].get('ca_vert_bundle', ""))
 
                 logger.info("Opening connection to OTRS")
 

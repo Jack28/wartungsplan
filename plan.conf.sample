@@ -15,6 +15,10 @@ recipient = michael_jackson@example.com
 server = http://localhost
 username = restapiuser
 password = AiX3sheeIyahf8aaQuah2wio
+#https_verify = True
+#File path; if specified overrides python/system default for
+#ca_cert_bundle = /etc/wartungsplan/cert.pem
+
 #customUser = root@localhost
 #queue = Queueebene1::Queueebene2
 #state = New
